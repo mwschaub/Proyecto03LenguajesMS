@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Máquina de Turing</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>Simulador de Máquina de Turing</h1>
+            <p>Proyecto — Lenguajes Formales y Autómatas</p>
+        </header>
+
+        <section class="panel">
+            <div class="panel-config">
+                <h2>Configuración</h2>
+                <label>1. Seleccione el Problema (Lenguaje)</label>
+                <select id="SelectProblema"></select>
+
+                <label>2. Ingrese la Cadena de Entrada</label>
+                <input id="InputCinta" placeholder="Ej: aabb" />
+
+                <button id="BtnCargar">Cargar Máquina / Resetear</button>
+            </div>
+
+            <div class="panel-control">
+                <h2>Controles</h2>
+                <div class="botones">
+                    <button id="BtnPaso" disabled>Paso</button>
+                    <button id="BtnCorrer" disabled>Correr</button>
+                </div>
+                <label>Velocidad</label>
+                <input id="SliderVelocidad" type="range" min="50" max="1000" value="500" />
+            </div>
+        </section>
+
+        <section class="visual">
+            <div class="estado">
+                <div>ESTADO ACTUAL: <span id="DisplayEstado">q_init</span></div>
+                <div id="DisplayResultado" class="resultado hidden">---</div>
+            </div>
+
+            <div id="ViewportCinta" class="viewport">
+                <div id="ContenedorCinta" class="tape"></div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Desarrollado por Marc Schaub</p>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
